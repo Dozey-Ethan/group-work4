@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Contact Page</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Hide scrollbar during loader */
+        }
+
+        /* Loader specific styles */
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1a202c; /* Dark background for loader */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .basketball {
+            width: 80px;
+            height: 80px;
+            background-color: #ff8c00; /* Orange */
+            border-radius: 50%;
+            position: relative;
+            animation: bounce 1s infinite alternate ease-in-out;
+            box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.3), inset 5px 5px 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .basketball::before,
+        .basketball::after {
+            content: '';
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+        }
+
+        .basketball::before {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: linear-gradient(to right, transparent 20%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.3) 80%, transparent 80%);
+        }
+
+        .basketball::after {
+            width: 2px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to bottom, transparent 20%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.3) 80%, transparent 80%);
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-30px);
+            }
+        }
+
+        /* Main content styles */
+        .main-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .main-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Contact card specific styles */
+        .contact-card {
+            background-color: #ffffff;
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .contact-card img {
+            border-radius: 9999px; /* rounded-full */
+            object-fit: cover;
+            border: 4px solid #4a90e2; /* Accent border color */
+        }
+
+        .contact-card h3 {
+            color: #2d3748; /* text-gray-800 */
+        }
+
+        .contact-card p {
+            color: #4a5568; /* text-gray-600 */
+        }
+
+        .contact-card a {
+            color: #4a90e2; /* text-blue-500 */
+            transition: color 0.2s ease-in-out;
+        }
+
+        .contact-card a:hover {
+            color: #2b6cb0; /* text-blue-700 */
+        }
+        .hello:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loader Container -->
+    <div id="loader" class="loader-container">
+        <div class="basketball"></div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div id="mainContent" class="main-content">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Meet Our Team</h1>
+            <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+                We're a passionate group dedicated to bringing you the best. Get in touch with us!<a class="hello" href="https://dozey-ethan.github.io/group-work3/" style="color: #0f3786;">Go back!</a>
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Contact Card 1 -->
+            <div class="contact-card p-6 flex flex-col items-center text-center">
+                <img class="w-32 h-32 mb-4" src="joses sirai.png" alt="Joses Sirai">
+                <h3 class="text-2xl font-bold mb-2">Joses Sirai</h3>
+                <p class="text-lg font-medium text-blue-600 mb-2">Developer</p>
+                <p class="text-gray-600 mb-4">"He is the youngest but intelligent and great in tech, coding and games."</p>
+                <div class="flex flex-col space-y-2">
+                    <a href="mailto:josessirai923@gmail.com" class="hover:underline">Email</a>
+                    <a href="" class="hover:underline"></a>
+                </div>
+            </div>
+
+            <!-- Contact Card 2 -->
+            <div class="contact-card p-6 flex flex-col items-center text-center">
+                <img class="w-32 h-32 mb-4" src="Jeremy kinoti.png" alt="Jeremy Kinoti">
+                <h3 class="text-2xl font-bold mb-2">Jeremy Kinoti</h3>
+                <p class="text-lg font-medium text-red-500 mb-2">Developer</p>
+                <p class="text-gray-600 mb-4">"He loves tech, codes, makes youtube videos and more."</p>
+                <div class="flex flex-col space-y-2">
+                    <a href="mailto:j.kinoti@thesteppingstoneselementaryschool.sc.ke" class="hover:underline">Email</a>
+                    <a href="" class="hover:underline"></a>
+                </div>
+            </div>
+
+            <!-- Contact Card 3 -->
+            <div class="contact-card p-6 flex flex-col items-center text-center">
+                <img class="w-32 h-32 mb-4" src="leo obogi.png" alt="Leo Opande">
+                <h3 class="text-2xl font-bold mb-2">Leo Opande</h3>
+                <p class="text-lg font-medium text-green-600 mb-2">Developer</p>
+                <p class="text-gray-600 mb-4">"His futuristic gadgets are so wild and also a great gamer."</p>
+                <div class="flex flex-col space-y-2">
+                    <a href="mailto:l.obogi@thesteppingstoneselementaryschool.sc.ke" class="hover:underline" target="new-tab">Email</a>
+                    <a href="" class="hover:underline"></a>
+                </div>
+            </div>
+
+            <!-- Contact Card 4 -->
+            <div class="contact-card p-6 flex flex-col items-center text-center">
+                <img class="w-32 h-32 mb-4" src="owen kengei.png" alt="Owen Kengei">
+                <h3 class="text-2xl font-bold mb-2">Owen Kengei</h3>
+                <p class="text-lg font-medium text-gray-500 mb-2">Developer</p>
+                <p class="text-gray-600 mb-4">"His awesome science skills and coding is just wild for us all to see." </p>
+                <div class="flex flex-col space-y-2">
+                    <a href="mailto:owenkengei@gmail.com" class="hover:underline">Email</a>
+                    <a href="" class="hover:underline"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = document.getElementById('loader');
+            const mainContent = document.getElementById('mainContent');
+
+            // Show loader for 2 seconds
+            setTimeout(() => {
+                loader.style.opacity = '0'; // Fade out loader
+                setTimeout(() => {
+                    loader.style.display = 'none'; // Hide loader after fade out
+                    mainContent.classList.add('visible'); // Make main content visible and animate it in
+                    document.body.style.overflow = 'auto'; // Re-enable scrolling
+                }, 500); // Wait for fade-out transition duration
+            }, 2000); // 2 seconds for the loader
+        });
+    </script>
+</body>
+</html>
